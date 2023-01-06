@@ -1,0 +1,38 @@
+﻿@model IEnumerable<U2Complementario_CarlosValdez.Models.ViewModels.MenuViewModel> 
+@{
+    Layout = "View";
+}
+
+<section class="menu2">
+    <h1>Tendencias</h1>
+   @foreach (var h in Model.Where(x=>x.NombreClasificacion=="Tendencias"))
+    {  
+        <div>
+            <img src="~/images/@(h.Id).png" />
+            <h1>@h.Nombre</h1>
+            <h2>$ @h.Precio</h2>
+            <p>@h.Descripción</p>
+        </div>
+    }
+    <h1>Tradicionales</h1>
+    @foreach (var h in Model.Where(x => x.NombreClasificacion == "Tradicionales"))
+    {  
+            <div>
+                <img src="~/images/@(h.Id).png" />
+                <h1>@h.Nombre</h1>
+                <h2>$ @h.Precio</h2>
+                <p>@h.Descripción</p>
+            </div>
+    }
+    <h1>Favoritas del chef</h1>
+    @foreach (var h in Model.Where(x => x.NombreClasificacion == "Favoritas del chef"))
+    {
+        <div>
+            <img src="~/images/@(h.Id).png" />
+            <h1>@h.Nombre</h1>
+            <h2>$ @h.Precio</h2>
+            <p>@h.Descripción</p>
+        </div>
+    }
+</section>
+

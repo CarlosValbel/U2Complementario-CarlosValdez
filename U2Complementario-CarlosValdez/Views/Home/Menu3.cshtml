@@ -1,0 +1,31 @@
+﻿@model IEnumerable<U2Complementario_CarlosValdez.Models.ViewModels.MenuViewModel>
+@{
+    Layout = "View";
+}
+@*@ViewBag();
+@{
+    var selectedburger = Model.Where(x => x.Id == ViewBag);
+}*@
+<section class="menu3">
+
+    <div>
+
+        <h1>NUESTRO MENÚ</h1>
+        <h2 class="seleccionado">
+            <a href="menu3.html"><span>Cuarto de libra con queso</span> <span class="price">$111.99</span>
+                
+            </a></h2>
+        @foreach (var h in Model)
+        {
+            <h2><a href="~/Home/Menu3"><span>@h.Nombre</span> <span class="price">$@h.Precio</span></a></h2>
+        }
+        
+    </div>
+    <div>
+
+        <img src="~/images/1.png" />
+        <p>Descrupcion</p>
+
+    </div>
+</section>
+
